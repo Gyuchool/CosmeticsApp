@@ -18,7 +18,6 @@ import java.time.LocalDateTime;
 @Getter
 @SuperBuilder
 @MappedSuperclass
-@AllArgsConstructor
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 public abstract class TimeEntity {
@@ -28,4 +27,8 @@ public abstract class TimeEntity {
 
     @LastModifiedDate
     private LocalDateTime modifiedDate;
+    public void updateTime(LocalDateTime createdDate, LocalDateTime modifiedDate){
+        this.createdDate = createdDate;
+        this.modifiedDate = modifiedDate;
+    }
 }
