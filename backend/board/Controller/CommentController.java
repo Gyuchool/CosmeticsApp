@@ -7,6 +7,7 @@ import cosmetics.demo.dto.CommentDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -17,10 +18,11 @@ import java.util.List;
 public class CommentController {
     private final CommentService commentService;
 
-    /* 댓글 목록 */
-    @GetMapping("/comment/list")
-    public ResponseList list(){
-        List<CommentDto> commentDtos = commentService.CommentsAll();
+    /* 게시글에 댓글 목록 */
+    @GetMapping("/{no}/comment/list")
+    public ResponseList list(@PathVariable("no") Long boardId, Pageable pageable){
+
+        List<CommentDto> commentDtos = commentService.CommentsAll(boardId, pageable);
 
         return new ResponseList(commentDtos.size(), commentDtos);
     }
