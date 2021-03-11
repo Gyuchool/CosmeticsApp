@@ -15,11 +15,6 @@ CosmeticsApp uses a number of open source projects to work properly:
 
 - React-native + SpringBoot + gradle + JPA + Mysql
 
-## Plugins
-
-Dillinger is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
-
 ## License
 
 MIT
