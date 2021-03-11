@@ -48,7 +48,6 @@ public class BoardEntity extends TimeEntity{
     @Enumerated(EnumType.STRING)
     private Category category;
 
-
     //==연관 관계 편의 메서드==//
     public void setMember(MemberEntity member){
         if(this.memberEntity != null){          //기존 연관관계 있을시 제거
@@ -59,11 +58,16 @@ public class BoardEntity extends TimeEntity{
         member.getBoards().add(this);
     }
 
-    public void setCategory(Category category){
-        this.category= category;
+
+    public void modifyBoard(String title, String content){
+        this.title = title;
+        this.content = content;
     }
 
-
+    public void updateLikes(int like){this.like = like;}
+    public void addHotboard(){
+        this.hot =true;
+    }
     public void updateView(int viewcnt){
         this.viewcnt = viewcnt;
     }
