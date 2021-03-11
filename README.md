@@ -9,6 +9,19 @@
 We are composed of four computer science majors and one industrial engineering major.
 4com1san made mobile_app, skin-related communities
 
+
+## Package
+ - 엔티티(
+   - Member
+   - Board
+   - Comment
+ - 기능
+   - 좋아요 추가
+   - 카테고리별 게시글 작성
+   - 댓글 작성
+   - 검색 기능
+   - 페이징 처리
+   
 ## Tech
 
 CosmeticsApp uses a number of open source projects to work properly:
